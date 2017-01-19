@@ -1,0 +1,14 @@
+{
+  "name": "ueef/image-filters",
+  "type": "library",
+  "require": {
+    "php": ">=5.4.2",
+    "ext-imagick": "*",
+    "ueef/assignable": "0.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ueef\\ImageFilters\\": "src/"
+    }
+  }
+}
