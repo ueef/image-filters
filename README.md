@@ -28,5 +28,8 @@
         "text_color": <string>,
         "background_color": <string>
     }
+    "loupe": {
+        "foreground_image": <string>
+    }
 }
 ```
