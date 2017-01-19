@@ -11,6 +11,7 @@ namespace Ueef\ImageFilters\Filters {
     class Watermark implements AssignableInterface, ImageFilterInterface
     {
         use AssignableTrait;
+
         /**
          * @var string
          */
