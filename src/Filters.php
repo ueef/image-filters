@@ -19,16 +19,12 @@ namespace Ueef\ImageFilters {
 
         public function apply(Imagick &$image, array $filters)
         {
-            foreach ($filters as &$filter) {
+            foreach ($filters as $filter) {
                 if (!array_key_exists($filter, $this->filters)) {
                     continue;
                 }
 
-                $filter = $this->filters[$filter];
-            }
-
-            foreach ($filters as &$filter) {
-                $filter->apply($image);
+                $this->filters[$filter]->apply($image);
             }
         }
     }
