@@ -17,7 +17,7 @@ namespace Ueef\ImageFilters {
          */
         private $filters = [];
 
-        public function apply(Imagick &$image, array $excluded)
+        public function apply(Imagick &$image, array $excluded = [])
         {
             foreach ($this->filters as $filterName => $filter) {
                 if (in_array($filterName, $excluded)) {
