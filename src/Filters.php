@@ -21,7 +21,7 @@ namespace Ueef\ImageFilters {
         {
             foreach ($filters as &$filter) {
                 if (!array_key_exists($filter, $this->filters)) {
-                    throw new Exception('Undefined filter: ' . $filter);
+                    continue;
                 }
 
                 $filter = $this->filters[$filter];
