@@ -6,9 +6,9 @@ namespace Ueef\ImageFilters\Filters {
     use ImagickDraw;
     use Ueef\Assignable\Traits\AssignableTrait;
     use Ueef\Assignable\Interfaces\AssignableInterface;
-    use Ueef\ImageFilters\Interfaces\ImageFilterInterface;
+    use Ueef\ImageFilters\Interfaces\FilterInterface;
 
-    class Watermark implements AssignableInterface, ImageFilterInterface
+    class Watermark implements AssignableInterface, FilterInterface
     {
         use AssignableTrait;
 

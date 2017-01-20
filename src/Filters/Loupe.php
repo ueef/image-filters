@@ -5,9 +5,9 @@ namespace Ueef\ImageFilters\Filters {
     use Imagick;
     use Ueef\Assignable\Interfaces\AssignableInterface;
     use Ueef\Assignable\Traits\AssignableTrait;
-    use Ueef\ImageFilters\Interfaces\ImageFilterInterface;
+    use Ueef\ImageFilters\Interfaces\FilterInterface;
 
-    class Loupe implements AssignableInterface, ImageFilterInterface
+    class Loupe implements AssignableInterface, FilterInterface
     {
         use AssignableTrait;
 

@@ -4,7 +4,7 @@ namespace Ueef\ImageFilters\Interfaces {
 
     use Imagick;
 
-    interface ImageFilterInterface
+    interface FilterInterface
     {
         public function apply(Imagick &$sourceImage);
     }

@@ -6,14 +6,14 @@ namespace Ueef\ImageFilters {
     use Ueef\Assignable\Traits\AssignableTrait;
     use Ueef\Assignable\Interfaces\AssignableInterface;
     use Ueef\ImageFilters\Exceptions\Exception;
-    use Ueef\ImageFilters\Interfaces\ImageFilterInterface;
+    use Ueef\ImageFilters\Interfaces\FilterInterface;
 
     class Filters implements AssignableInterface
     {
         use AssignableTrait;
 
         /**
-         * @var ImageFilterInterface[]
+         * @var FilterInterface[]
          */
         private $filters = [];
 

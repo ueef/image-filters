@@ -6,9 +6,9 @@ namespace Ueef\ImageFilters\Filters\Text {
     use ImagickDraw;
     use Ueef\Assignable\Traits\AssignableTrait;
     use Ueef\Assignable\Interfaces\AssignableInterface;
-    use Ueef\ImageFilters\Interfaces\ImageFilterInterface;
+    use Ueef\ImageFilters\Interfaces\FilterInterface;
 
-    class Top implements AssignableInterface, ImageFilterInterface
+    class Top implements AssignableInterface, FilterInterface
     {
         use AssignableTrait;
 

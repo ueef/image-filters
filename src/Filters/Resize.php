@@ -5,9 +5,9 @@ namespace Ueef\ImageFilters\Filters {
     use Imagick;
     use Ueef\Assignable\Traits\AssignableTrait;
     use Ueef\Assignable\Interfaces\AssignableInterface;
-    use Ueef\ImageFilters\Interfaces\ImageFilterInterface;
+    use Ueef\ImageFilters\Interfaces\FilterInterface;
 
-    class Resize implements AssignableInterface, ImageFilterInterface
+    class Resize implements AssignableInterface, FilterInterface
     {
         use AssignableTrait;
 
