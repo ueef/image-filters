@@ -17,14 +17,14 @@ namespace Ueef\ImageFilters {
          */
         private $filters = [];
 
-        public function apply(Imagick &$image, array $filters)
+        public function apply(Imagick &$image, array $excluded)
         {
-            foreach ($filters as $filter) {
-                if (!array_key_exists($filter, $this->filters)) {
+            foreach ($this->filters as $filterName => $filter) {
+                if (in_array($filterName, $excluded)) {
                     continue;
                 }
 
-                $this->filters[$filter]->apply($image);
+                $filter->apply($image);
             }
         }
     }
