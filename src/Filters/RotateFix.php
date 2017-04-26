@@ -29,8 +29,6 @@ namespace Ueef\ImageFilters\Filters {
                         break;
                 }
             }
-
-            $sourceImage->writeImage($sourceImage);
         }
     }
 }
