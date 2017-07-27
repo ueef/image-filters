@@ -17,6 +17,13 @@ namespace Ueef\ImageFilters {
          */
         private $filters = [];
 
+
+        public function __construct(array $filters, array $parameters = [])
+        {
+            $this->filters = $filters;
+            $this->assign($parameters);
+        }
+
         public function apply(Imagick &$image, array $excluded = [])
         {
             foreach ($this->filters as $filterName => $filter) {
