@@ -7,7 +7,7 @@ namespace Ueef\ImageFilters\Filters {
     use Ueef\Assignable\Interfaces\AssignableInterface;
     use Ueef\ImageFilters\Interfaces\FilterInterface;
 
-    class Resize implements AssignableInterface, FilterInterface
+    class Scale implements AssignableInterface, FilterInterface
     {
         use AssignableTrait;
 
