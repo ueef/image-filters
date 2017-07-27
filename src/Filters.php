@@ -3,14 +3,17 @@
 namespace Ueef\ImageFilters {
 
     use Imagick;
+    use Iterator;
     use Ueef\Assignable\Traits\AssignableTrait;
     use Ueef\Assignable\Interfaces\AssignableInterface;
-    use Ueef\ImageFilters\Exceptions\Exception;
     use Ueef\ImageFilters\Interfaces\FilterInterface;
 
-    class Filters implements AssignableInterface
+    class Filters implements Iterator, AssignableInterface
     {
         use AssignableTrait;
+
+        const INCT = 1;
+        const DIFF = 2;
 
         /**
          * @var FilterInterface[]
@@ -24,15 +27,66 @@ namespace Ueef\ImageFilters {
             $this->assign($parameters);
         }
 
-        public function apply(Imagick &$image, array $excluded = [])
+        public function has(string $key): bool
+        {
+            return key_exists($key, $this->filters);
+        }
+
+        public function get(string $key): FilterInterface
+        {
+            return $this->filters[$key];
+        }
+
+        public function slice(?array $keys = null, $type = self::DIFF)
+        {
+            $filters = $this->filters;
+            if (null !== $keys) {
+                $keys = array_fill_keys($keys, null);
+
+                switch ($type) {
+                    case self::INCT:
+                        $filters = array_intersect_key($filters, $keys);
+                        break;
+
+                    case self::DIFF:
+                        $filters = array_diff_key($filters, $keys);
+                        break;
+                }
+            }
+
+            return new static($filters);
+        }
+
+        public function apply(Imagick &$image)
         {
             foreach ($this->filters as $filterName => $filter) {
-                if (in_array($filterName, $excluded)) {
-                    continue;
-                }
-
                 $filter->apply($image);
             }
+        }
+
+        public function current()
+        {
+            return current($this->filters);
+        }
+
+        public function key()
+        {
+            return key($this->filters);
+        }
+
+        public function next()
+        {
+            next($this->filters);
+        }
+
+        public function rewind()
+        {
+            reset($this->filters);
+        }
+
+        public function valid()
+        {
+            return null !== $this->key();
         }
     }
 }
