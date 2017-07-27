@@ -1,6 +1,6 @@
 <?php
 
-namespace Ueef\ImageFilters\Filters {
+namespace Ueef\ImageFilters\Filters\Watermark {
 
     use Imagick;
     use ImagickDraw;
@@ -8,7 +8,7 @@ namespace Ueef\ImageFilters\Filters {
     use Ueef\Assignable\Interfaces\AssignableInterface;
     use Ueef\ImageFilters\Interfaces\FilterInterface;
 
-    class Watermark implements AssignableInterface, FilterInterface
+    class Crosswise implements AssignableInterface, FilterInterface
     {
         use AssignableTrait;
 
