@@ -4,7 +4,7 @@
   "require": {
     "php": ">=7.1",
     "ext-imagick": "*",
-    "ueef/assignable": "0.0.*"
+    "ueef/assignable": "*"
   },
   "autoload": {
     "psr-4": {
