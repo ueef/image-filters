@@ -1,10 +1,11 @@
 {
   "name": "ueef/image-filters",
   "type": "library",
+  "description": "",
+  "license": "MIT",
   "require": {
     "php": ">=7.1",
-    "ext-imagick": "*",
-    "ueef/assignable": "*"
+    "ext-imagick": "*"
   },
   "autoload": {
     "psr-4": {

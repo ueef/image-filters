@@ -1,12 +1,12 @@
 <?php
+declare(strict_types=1);
 
-namespace Ueef\ImageFilters\Interfaces {
+namespace Ueef\ImageFilters\Interfaces;
 
-    use Imagick;
+use Imagick;
 
-    interface FilterInterface
-    {
-        public function apply(Imagick &$sourceImage);
-    }
+interface FilterInterface
+{
+    public function apply(Imagick &$image);
 }
 
