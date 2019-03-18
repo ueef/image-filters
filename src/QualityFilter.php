@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Ueef\ImageFilters\Filters;
+namespace Ueef\ImageFilters;
 
 use Imagick;
 use Ueef\ImageFilters\Interfaces\FilterInterface;
